@@ -1,4 +1,4 @@
-package com.github.monaboiste.trainrides;
+package com.github.monaboiste.trainrides.application;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
