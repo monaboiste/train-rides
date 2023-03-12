@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'pl.allegro.tech.build.axion-release'
+}
+
+group = 'com.github.monaboiste'
+project.version = scmVersion.version
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(19))
+    }
+}
+
+repositories {
+    mavenLocal()
+    gradlePluginPortal()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+}
+
+publishing {
+    publications {
+        trainRides(MavenPublication) {
+            from components.java
+        }
+    }
+}
