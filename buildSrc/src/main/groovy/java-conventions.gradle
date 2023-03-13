@@ -25,6 +25,13 @@ test {
 dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    implementation platform('io.projectreactor:reactor-bom:2022.0.3')
+    implementation 'io.projectreactor:reactor-core'
+
+    implementation 'com.github.mvallim:java-fluent-validator:1.10.0'
+
+    testImplementation 'org.assertj:assertj-core:3.24.2'
 }
 
 publishing {

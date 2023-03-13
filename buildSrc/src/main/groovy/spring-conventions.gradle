@@ -4,9 +4,15 @@ plugins {
 }
 
 dependencies {
+    implementation 'net.logstash.logback:logstash-logback-encoder:7.3'
+
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    implementation platform('io.micrometer:micrometer-tracing-bom:1.0.2')
+    implementation 'io.micrometer:micrometer-tracing'
+    implementation 'io.micrometer:micrometer-tracing-bridge-brave'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.assertj:assertj-core:3.24.2'
 }
